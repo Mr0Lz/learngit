@@ -8,3 +8,6 @@ Creating a new branch is quick and simple.
 Git is a free software 1
 Git is a free software
 git stash
+git stash
+git stash
+git stash
