@@ -72,5 +72,41 @@ https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b
 	git stash drop //需要用git stash drop来删除；
 	git stash pop //恢复的同时把stash内容记录也删
 
+创建标签 不写commit_id 默认当前版本
+//打开标签 
+	git tag  标签名(v0.1) 
+//创建带有说明的标签，用-a指定标签名，-m指定说明文字 
+	git tag -a 标签名 -m  "说明文字"" commit_id?
+//可以通过-s用私钥签名一个标签 必须首先安装gpg（GnuPG）
+	git tag -s 标签名 -m "说明文字" commit_id?
+//给特定的commit版本打标签
+	git tag 标签名  commit_id
+//查看所有标签
+	git tag
+//查看标签信息
+	git show 标签名
+//删除标签
+	git tag -d 标签名
+//推送某个标签到远程
+	git push  origin(远程库)  标签名
+//一次性推送所有标签名
+	git push origin(远程库) --tags
+//删除远程标签  ,先删除本地标签
+	git push origin(远程库)  :refs/tags/标签名
+//Git显示颜色，会让命令输出看起来更醒目
+	git config --global color.ui true
+//忽略特殊文件
+	创建一个特殊的.gitignore文件，然后把要忽略的文件名填进去,Git就会自动忽略,
+	git add   在.gitignore文件里的被忽略的文件时不能操作,可以使用强制添加
+	git add -f 在.gitignore文件里的被忽略的文件
+//可以用git check-ignore命令检查文件被那个规则忽略
+	git check-ignore -v  filename
 
-
+配置命令行别名 --global参数是全局参数 对当前用户起作用的，如果不加，那只针对当前的仓库起作用
+//告诉Git，以后st就表示status
+	git config --global alias.st status
+//命令git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区
+//配置一个unstage别名
+	git config --global alias.unstage 'reset HEAD'  
+搭建Git服务器
+	https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000
