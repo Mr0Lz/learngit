@@ -1,4 +1,4 @@
-﻿window 系统
+window 系统
 //为机器命名
 	git config --global user.name "Your Name"
 	git config --global user.email "email@example.com"
