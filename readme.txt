@@ -6,6 +6,11 @@ window 系统
 	git  init 
 //查看当前工作区状态 
 	git status 
+//提交变化
+	git add fileName
+	git add .  所有变化提交到暂存区,包括文件内容修改以及新文件,但不包括被删除的文件
+	git add -u 所有变化提交到暂存区,包括文件内容修改以及删除的文件,但不会提交新文件
+	git add -A 所有变化提交到暂存区
 //提交git仓库
 	git commit -m "注释"  
 //查看文件具体修改了什么内容
@@ -71,6 +76,9 @@ https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b
 	git branch -D 分支   //强行删除分支
 //查看分支合并图
 	git log --graph --oneline --abbrev-commit
+//变基  可以保持一个漂亮而干净的历史提交记录。 
+//在当前分支上使用git rebase变基操作目标基底分支(master)
+	git rebase 目标基底分支
 //当前工作现场“储藏”起来，等以后恢复现场后继续工作
 	git stash    //在开发时突然有别的事情做,开启另外debugger 分支是用,或者停止工作时
 //可以查看Git把stash内容存在某个地方
